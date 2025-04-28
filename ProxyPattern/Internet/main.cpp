@@ -3,14 +3,14 @@
 #include <algorithm>
 
 using namespace std;
-
+// Subject interface
 class Internet
 {
 public:
     virtual void connectTo(const string &serverHost) const = 0;
     virtual ~Internet() = default;
 };
-
+// real subject
 class RealInternet : public Internet
 {
 public:
@@ -19,7 +19,7 @@ public:
         cout << "Connecting to " << serverHost << endl;
     }
 };
-
+// proxy
 class ProxyInternet : public Internet
 {
 private:
